@@ -1,0 +1,136 @@
+{
+    "key": "group_balcyny_dzial",
+    "title": "Strona działu",
+    "fields": [
+        {
+            "key": "field_balcyny_dzial_wstep",
+            "label": "Opis ogólny",
+            "name": "wstep",
+            "type": "textarea",
+            "instructions": "Kilka zdań o dziale, np. ile mamy pól, co uprawiamy lub hodujemy. Pustą linią oddzielasz akapity.",
+            "required": 0,
+            "rows": 6,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_balcyny_dzial_liczby",
+            "label": "Liczby w nagłówku",
+            "name": "liczby",
+            "type": "repeater",
+            "instructions": "Krótkie kafelki z liczbami, np. „1 200 ha” – „gruntów ornych”. Najlepiej 3–4.",
+            "required": 0,
+            "layout": "table",
+            "min": 0,
+            "max": 6,
+            "button_label": "Dodaj liczbę",
+            "sub_fields": [
+                {
+                    "key": "field_balcyny_dzial_liczby_wartosc",
+                    "label": "Liczba",
+                    "name": "wartosc",
+                    "type": "text",
+                    "placeholder": "np. 1 200 ha",
+                    "parent_repeater": "field_balcyny_dzial_liczby"
+                },
+                {
+                    "key": "field_balcyny_dzial_liczby_opis",
+                    "label": "Opis",
+                    "name": "opis",
+                    "type": "text",
+                    "placeholder": "np. gruntów ornych",
+                    "parent_repeater": "field_balcyny_dzial_liczby"
+                }
+            ]
+        },
+        {
+            "key": "field_balcyny_dzial_pozycje",
+            "label": "Co uprawiamy / co hodujemy",
+            "name": "pozycje",
+            "type": "repeater",
+            "instructions": "Lista upraw albo zwierząt, np. „Pszenica ozima” – „420 ha” – krótki opis.",
+            "required": 0,
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "button_label": "Dodaj pozycję",
+            "sub_fields": [
+                {
+                    "key": "field_balcyny_dzial_pozycje_nazwa",
+                    "label": "Nazwa",
+                    "name": "nazwa",
+                    "type": "text",
+                    "placeholder": "np. Pszenica ozima",
+                    "parent_repeater": "field_balcyny_dzial_pozycje"
+                },
+                {
+                    "key": "field_balcyny_dzial_pozycje_ilosc",
+                    "label": "Ile",
+                    "name": "ilosc",
+                    "type": "text",
+                    "placeholder": "np. 420 ha albo 350 szt.",
+                    "parent_repeater": "field_balcyny_dzial_pozycje"
+                },
+                {
+                    "key": "field_balcyny_dzial_pozycje_opis",
+                    "label": "Krótki opis",
+                    "name": "opis",
+                    "type": "textarea",
+                    "rows": 2,
+                    "new_lines": "",
+                    "parent_repeater": "field_balcyny_dzial_pozycje"
+                }
+            ]
+        },
+        {
+            "key": "field_balcyny_dzial_zdjecie",
+            "label": "Zdjęcie w nagłówku",
+            "name": "zdjecie_naglowka",
+            "type": "image",
+            "instructions": "Opcjonalne. Szerokie zdjęcie (poziome). Bez zdjęcia pokaże się widok pól z lotu ptaka.",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "32"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "33"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1793480400
+}

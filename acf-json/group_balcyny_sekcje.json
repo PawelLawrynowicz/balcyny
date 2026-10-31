@@ -1,0 +1,103 @@
+{
+    "key": "group_balcyny_sekcje",
+    "title": "Sekcje strony",
+    "fields": [
+        {
+            "key": "field_balcyny_sekcje_naglowek",
+            "label": "Zdjęcie w nagłówku",
+            "name": "zdjecie_naglowka",
+            "type": "image",
+            "instructions": "Opcjonalne. Szerokie, poziome zdjęcie za tytułem strony. Bez zdjęcia pokaże się widok pól z lotu ptaka.",
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_balcyny_sekcje",
+            "label": "Sekcje",
+            "name": "sekcje",
+            "type": "repeater",
+            "instructions": "Każda sekcja to tytuł, tekst i opcjonalne zdjęcie. Kolejność zmieniasz, przeciągając sekcję za numer.",
+            "required": 0,
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "button_label": "Dodaj sekcję",
+            "collapsed": "field_balcyny_sekcje_tytul",
+            "sub_fields": [
+                {
+                    "key": "field_balcyny_sekcje_tytul",
+                    "label": "Tytuł sekcji",
+                    "name": "tytul",
+                    "type": "text",
+                    "required": 1,
+                    "placeholder": "np. Bałcyńskie monokultury",
+                    "parent_repeater": "field_balcyny_sekcje"
+                },
+                {
+                    "key": "field_balcyny_sekcje_tresc",
+                    "label": "Tekst",
+                    "name": "tresc",
+                    "type": "wysiwyg",
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_balcyny_sekcje"
+                },
+                {
+                    "key": "field_balcyny_sekcje_zdjecie",
+                    "label": "Zdjęcie (opcjonalnie)",
+                    "name": "zdjecie",
+                    "type": "image",
+                    "instructions": "Pokazuje się obok tekstu. Jeśli sekcja ma film, zamiast zdjęcia pokaże się film.",
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "parent_repeater": "field_balcyny_sekcje"
+                },
+                {
+                    "key": "field_balcyny_sekcje_film",
+                    "label": "Film z YouTube (opcjonalnie)",
+                    "name": "film",
+                    "type": "oembed",
+                    "instructions": "Wklej link do filmu, np. https://www.youtube.com/watch?v=... Pokazuje się obok tekstu.",
+                    "parent_repeater": "field_balcyny_sekcje"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "9"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1793494800
+}

@@ -1,0 +1,73 @@
+{
+    "key": "group_balcyny_aktualnosc",
+    "title": "Aktualność",
+    "fields": [
+        {
+            "key": "field_balcyny_akt_dzial",
+            "label": "Dział",
+            "name": "dzial",
+            "type": "select",
+            "instructions": "Na stronie którego działu ma się pokazać ta aktualność. Każda aktualność jest też na liście wszystkich aktualności.",
+            "required": 1,
+            "choices": {
+                "produkcja-roslinna": "Produkcja roślinna",
+                "hodowla": "Hodowla zwierzęca",
+                "doswiadczenia": "Doświadczenia i UWM",
+                "ogolne": "Ogólne"
+            },
+            "default_value": "ogolne",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0
+        },
+        {
+            "key": "field_balcyny_akt_tresc",
+            "label": "Treść",
+            "name": "tresc",
+            "type": "textarea",
+            "instructions": "Pustą linią oddzielasz akapity.",
+            "required": 1,
+            "rows": 10,
+            "new_lines": "wpautop"
+        },
+        {
+            "key": "field_balcyny_akt_zdjecie",
+            "label": "Zdjęcie",
+            "name": "zdjecie",
+            "type": "image",
+            "instructions": "Opcjonalne.",
+            "required": 0,
+            "return_format": "id",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_balcyny_akt_film",
+            "label": "Film z YouTube",
+            "name": "film",
+            "type": "oembed",
+            "instructions": "Opcjonalne. Wklej link do filmu na YouTube, np. https://www.youtube.com/watch?v=...",
+            "required": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "aktualnosc"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1793476800
+}
