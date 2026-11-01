@@ -79,6 +79,15 @@ add_filter( 'use_block_editor_for_post', function ( $uzyj, $post ) {
 	return $uzyj;
 }, 10, 2 );
 
+/* ---------- Strona /login/: ukryta przed Google ---------- */
+add_filter( 'wp_robots', function ( $robots ) {
+	if ( is_page( 'login' ) ) {
+		$robots['noindex']  = true;
+		$robots['nofollow'] = true;
+	}
+	return $robots;
+} );
+
 /* ---------- Secure Custom Fields: zapis definicji pól do motywu ---------- */
 add_filter( 'acf/settings/save_json', function () {
 	return get_stylesheet_directory() . '/acf-json';

@@ -18,6 +18,9 @@
 			KRS: 0000175886<br>
 			REGON: 510287969<br>
 			Kapitał zakładowy: 2,8 mln zł
+			<?php if ( current_user_can( 'publish_posts' ) ) : // widzą tylko zalogowani pracownicy ?>
+				<br><br><a href="<?php echo esc_url( home_url( '/login/' ) ); ?>">+ Dodaj aktualność</a>
+			<?php endif; ?>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'stopka',

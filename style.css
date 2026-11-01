@@ -148,13 +148,32 @@ a { color: var(--zielony); }
 /* Sekcja: sam tekst w wyśrodkowanej kolumnie, a z filmem/zdjęciem – dwie kolumny */
 .sekcja { max-width: 820px; margin: 0 auto 40px; }
 .sekcja-z-media { max-width: none; }
-.sekcja-z-media .sekcja-kolumny { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+.sekcja-z-media .sekcja-kolumny { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; } 
 .sekcja-z-media .tekst { max-width: none; }
 .sekcja-media.film { margin: 0; }
 .sekcja-zdjecie { display: block; width: 100%; box-shadow: 0 2px 8px rgba(0,0,0,.12); }
 @media (max-width: 800px) {
 	.sekcja-z-media .sekcja-kolumny { grid-template-columns: 1fr; }
 }
+
+/* ---------- Gospodarstwo: kafelki działów ---------- */
+.dzialy { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin: 30px 0; }
+.dzial-kafel {
+	display: flex; flex-direction: column; background: #fff; color: var(--tekst); text-decoration: none;
+	box-shadow: 0 2px 10px rgba(0,0,0,.1); transition: transform .2s, box-shadow .2s;
+}
+.dzial-kafel:hover { transform: translateY(-4px); box-shadow: 0 6px 18px rgba(0,0,0,.15); }
+.dzial-kafel-gora {
+	display: flex; align-items: flex-end; min-height: 160px; padding: 20px 24px;
+	background: linear-gradient(135deg, var(--zielony), #4f7f45) center / cover no-repeat;
+}
+.dzial-kafel-gora h2 { margin: 0; color: #fff; font-size: 1.7rem; text-shadow: 0 1px 4px rgba(0,0,0,.4); }
+.dzial-kafel-tresc { display: flex; flex-direction: column; flex: 1; padding: 20px 24px; }
+.dzial-kafel-tresc p { margin-top: 0; }
+.dzial-kafel-liczby { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 16px; color: var(--szary); }
+.dzial-kafel-liczby strong { color: var(--zielony); font-size: 1.2rem; }
+.dzial-kafel-link { margin-top: auto; font-weight: 700; color: var(--zielony); }
+.dzial-kafel:hover .dzial-kafel-link { color: var(--zloty); }
 
 /* ---------- Osoby ---------- */
 .grupa-tytul { margin: 24px 0 10px; font-size: 1rem; text-transform: uppercase; letter-spacing: .05em; color: var(--szary); }
@@ -200,6 +219,37 @@ a { color: var(--zielony); }
 	color: var(--zielony); text-decoration: none; font-weight: 600; font-size: .95rem;
 }
 .filtry a:hover, .filtry a.aktywny { background: var(--zielony); color: #fff; }
+
+/* ---------- Formularz „Dodaj aktualność” ---------- */
+.panel-redaktora h1 { color: var(--zielony); }
+.komunikat { background: var(--zielony-jasny); border-left: 4px solid var(--zielony); padding: 14px 18px; margin-bottom: 20px; }
+
+/* Pola formularza SCF i logowania: duże, czytelne, na całą szerokość */
+.panel-redaktora .acf-fields > .acf-field { padding: 14px 0; border: 0; }
+.panel-redaktora .acf-field .acf-label label,
+.panel-redaktora #loginform label { font-weight: 700; font-size: 1.05rem; }
+.panel-redaktora .acf-field .acf-label .description { color: var(--szary); }
+.panel-redaktora input[type="text"],
+.panel-redaktora input[type="url"],
+.panel-redaktora input[type="password"],
+.panel-redaktora select,
+.panel-redaktora textarea {
+	width: 100%; padding: 10px 12px; font-size: 1rem; font-family: inherit;
+	border: 1px solid #b9c2b5; border-radius: 4px; background: #fff;
+}
+.panel-redaktora input:focus, .panel-redaktora select:focus, .panel-redaktora textarea:focus { outline: 2px solid var(--zielony); }
+.panel-redaktora #loginform p { margin-bottom: 14px; }
+.panel-redaktora #loginform .login-remember label { font-weight: 400; }
+.panel-redaktora #wp-submit,
+.przycisk-duzy { padding: 14px 32px; font-size: 1.1rem; border: 0; cursor: pointer; }
+.panel-redaktora #wp-submit { background: var(--zielony); color: #fff; border-radius: 4px; font-weight: 600; }
+
+.moje-wpisy { list-style: none; padding: 0; }
+.moje-wpisy li { display: flex; gap: 12px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid #e3e6e0; }
+.moje-wpisy a { font-weight: 600; }
+.moje-wpisy a:first-of-type { margin-left: auto; } /* Popraw i Usuń przy prawej krawędzi */
+.moje-wpisy .usun { color: #b3261e; }
+.wyloguj { margin-top: 30px; font-size: .9rem; }
 
 /* ---------- Pojedyncza aktualność ---------- */
 .kontener-waski { max-width: 800px; }
